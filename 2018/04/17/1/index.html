@@ -1,166 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends partial/layout
 
-  
-  <title>Yinglingの窝</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一篇博客交代一下博客都是什么东西弄成的使用Termux安装Github提供网页托管Hexo提供博客程序域名由GitHub提供技术指导 我老公咋安的我会以后交就这样">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Yinglingの窝">
-<meta property="og:url" content="https://yinglin233.github.io/2018/04/17/1/index.html">
-<meta property="og:site_name" content="Yinglingの窝">
-<meta property="og:description" content="第一篇博客交代一下博客都是什么东西弄成的使用Termux安装Github提供网页托管Hexo提供博客程序域名由GitHub提供技术指导 我老公咋安的我会以后交就这样">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-17T15:26:48.556Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yinglingの窝">
-<meta name="twitter:description" content="第一篇博客交代一下博客都是什么东西弄成的使用Termux安装Github提供网页托管Hexo提供博客程序域名由GitHub提供技术指导 我老公咋安的我会以后交就这样">
-  
-    <link rel="alternate" href="/atom.xml" title="Yinglingの窝" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+include mixins
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Yinglingの窝</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yinglin233.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/17/1/" class="article-date">
-  <time datetime="2018-04-17T15:26:48.626Z" itemprop="datePublished">2018-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h1><p>交代一下博客都是什么东西弄成的<br>使用Termux安装<br>Github提供网页托管<br>Hexo提供博客程序<br>域名由GitHub提供<br>技术指导 我老公<br>咋安的我会以后交<br>就这样</p>
+block site_title
+    != page.title + " · " + config.title
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yinglin233.github.io/2018/04/17/1/" data-id="cjg3tn6au0000ius6o4colvft" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-  
-</article>
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/04/17/1/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Yinglin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+block content
+  .autopagerize_page_element: .content: .post-page
+    include mixins
+    +make_post(page, true)
+    .share
+      .evernote
+        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+      .weibo
+        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+      .twitter
+        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
+    - var prev = page.prev ? page.prev.path : false;
+    - var next = page.next ? page.next.path : false;
+    .pagination
+      ul.clearfix
+        if prev
+          li.pre.pagbuttons
+            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
+        if next
+          li.next.pagbuttons
+            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
+    if page.comments
+        include partial/comments
